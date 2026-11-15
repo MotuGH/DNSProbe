@@ -53,4 +53,10 @@ go build -trimpath -o DNSProbe.exe .
 - [quic-go](https://github.com/quic-go/quic-go), [qpack](https://github.com/quic-go/qpack) — MIT.
 - [IANA root anchors](https://data.iana.org/root-anchors/root-anchors.xml).
 
-Лицензии зависимостей приложены. Отдельная лицензия на собственный код проекта пока не выбрана.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+Third-party libraries, dependencies, and components retain their respective licenses and copyright notices. The MIT License applies only to original project code and materials owned by the project author.
+
+Third-party components are governed by their respective license terms.
