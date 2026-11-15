@@ -1,0 +1,1584 @@
+[
+  {
+    "name": "AdGuard Default",
+    "host": "dns.adguard-dns.com",
+    "url": "https://dns.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: реклама/трекеры DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Default",
+    "ip": "94.140.14.14",
+    "default": false,
+    "quic": "quic://dns.adguard-dns.com"
+  },
+  {
+    "name": "AdGuard Default · резервный",
+    "host": "dns.adguard-dns.com",
+    "url": "https://dns.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: реклама/трекеры DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Default",
+    "ip": "94.140.15.15",
+    "default": false,
+    "quic": "quic://dns.adguard-dns.com"
+  },
+  {
+    "name": "AdGuard Family",
+    "host": "family.adguard-dns.com",
+    "url": "https://family.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: реклама/трекеры; родительский контроль DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Family",
+    "ip": "94.140.14.15",
+    "default": false,
+    "quic": "quic://family.adguard-dns.com"
+  },
+  {
+    "name": "AdGuard Family · резервный",
+    "host": "family.adguard-dns.com",
+    "url": "https://family.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: реклама/трекеры; родительский контроль DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Family",
+    "ip": "94.140.15.16",
+    "default": false,
+    "quic": "quic://family.adguard-dns.com"
+  },
+  {
+    "name": "AdGuard Unfiltered",
+    "host": "unfiltered.adguard-dns.com",
+    "url": "https://unfiltered.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: нет DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором).",
+    "policy": "standard",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html",
+      "https://adguard-dns.io/en/versions/dns/release.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Unfiltered",
+    "ip": "94.140.14.140",
+    "default": false,
+    "quic": "quic://unfiltered.adguard-dns.com"
+  },
+  {
+    "name": "AdGuard Unfiltered · резервный",
+    "host": "unfiltered.adguard-dns.com",
+    "url": "https://unfiltered.adguard-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Фильтрация: нет DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://adguard-dns.io/en/public-dns.html",
+      "https://adguard-dns.io/en/versions/dns/release.html"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AdGuard Unfiltered",
+    "ip": "94.140.14.141",
+    "default": false,
+    "quic": "quic://unfiltered.adguard-dns.com"
+  },
+  {
+    "name": "AliDNS",
+    "host": "dns.alidns.com",
+    "url": "https://dns.alidns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Адреса и DoH/DoT опубликованы оператором. Не является эталоном отсутствия фильтрации. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://alidns.com/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AliDNS",
+    "ip": "223.5.5.5",
+    "default": false,
+    "quic": "quic://dns.alidns.com"
+  },
+  {
+    "name": "AliDNS · резервный",
+    "host": "dns.alidns.com",
+    "url": "https://dns.alidns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Адреса и DoH/DoT опубликованы оператором. Не является эталоном отсутствия фильтрации. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://alidns.com/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "AliDNS",
+    "ip": "223.6.6.6",
+    "default": false,
+    "quic": "quic://dns.alidns.com"
+  },
+  {
+    "name": "Cloudflare",
+    "host": "one.one.one.one",
+    "url": "https://cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Без фильтрации контента",
+    "policy": "standard",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-tls/",
+      "https://blog.cloudflare.com/announcing-ddr-support/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare",
+    "ip": "1.1.1.1",
+    "default": true
+  },
+  {
+    "name": "Cloudflare · резервный",
+    "host": "one.one.one.one",
+    "url": "https://cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Без фильтрации контента",
+    "policy": "standard",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-tls/",
+      "https://blog.cloudflare.com/announcing-ddr-support/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare",
+    "ip": "1.0.0.1",
+    "default": false
+  },
+  {
+    "name": "Comss.one",
+    "host": "dns.comss.one",
+    "url": "https://dns.comss.one/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doq"
+    ],
+    "note": "DoH/DoT подтверждены документацией. IP для шифрованного сервиса определяется по имени; не подставляем IP обычного DNS. DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "smart",
+    "sources": [
+      "https://www.comss.ru/page.php?id=7315"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Comss.one",
+    "ip": "",
+    "default": false,
+    "quic": "quic://dns.comss.one"
+  },
+  {
+    "name": "ControlD Free p0",
+    "host": "p0.freedns.controld.com",
+    "url": "https://freedns.controld.com/p0",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Без фильтрации; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.2.11",
+    "dot_ip": "76.76.2.11",
+    "profile": "ControlD Free p0",
+    "ip": "76.76.2.0",
+    "default": false,
+    "quic": "quic://p0.freedns.controld.com",
+    "doq_ip": "76.76.2.11"
+  },
+  {
+    "name": "ControlD Free p0 · резервный",
+    "host": "p0.freedns.controld.com",
+    "url": "https://freedns.controld.com/p0",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Без фильтрации; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.10.11",
+    "dot_ip": "76.76.10.11",
+    "profile": "ControlD Free p0",
+    "ip": "76.76.10.0",
+    "default": false,
+    "quic": "quic://p0.freedns.controld.com",
+    "doq_ip": "76.76.10.11"
+  },
+  {
+    "name": "Dagami DNS",
+    "host": "dns.dagami.ru",
+    "url": "https://dns.dagami.ru/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "IPv4 заменён: старые 45.86.65.240 и 2.56.122.194 больше не указаны на странице настройки.",
+    "policy": "smart",
+    "sources": [
+      "https://dns.dagami.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Dagami DNS",
+    "ip": "48.102.213.179",
+    "default": false
+  },
+  {
+    "name": "DNS-AI",
+    "host": "dns.dns-ai.ru",
+    "url": "https://dns.dns-ai.ru/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Только шифрованный DNS. IP — точки подключения DoH/DoT, не обычный DNS. Smart DNS и фильтрация рекламы. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "smart",
+    "sources": [
+      "https://dns-ai.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS-AI",
+    "ip": "194.87.196.13",
+    "default": false,
+    "quic": "quic://dns.dns-ai.ru"
+  },
+  {
+    "name": "DNS-AI · резервный",
+    "host": "dns.dns-ai.ru",
+    "url": "https://dns.dns-ai.ru/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Только шифрованный DNS. IP — точки подключения DoH/DoT, не обычный DNS. Smart DNS и фильтрация рекламы. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "smart",
+    "sources": [
+      "https://dns-ai.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS-AI",
+    "ip": "45.151.102.219",
+    "default": false,
+    "quic": "quic://dns.dns-ai.ru"
+  },
+  {
+    "name": "dns.malw.link",
+    "host": "dns.malw.link",
+    "url": "https://dns.malw.link/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Адреса совпадают с текущей страницей. Smart DNS и рекламный фильтр.",
+    "policy": "smart",
+    "sources": [
+      "https://info.dns.malw.link/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "dns.malw.link",
+    "ip": "179.254.166.171",
+    "default": false
+  },
+  {
+    "name": "dns.malw.link · резервный",
+    "host": "dns.malw.link",
+    "url": "https://dns.malw.link/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Адреса совпадают с текущей страницей. Smart DNS и рекламный фильтр. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://info.dns.malw.link/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "dns.malw.link",
+    "ip": "164.5.224.81",
+    "default": false
+  },
+  {
+    "name": "Geodema DNS",
+    "host": "dns.geodema.love",
+    "url": "https://dns.geodema.love/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Адреса подтверждены прямым чтением официальной страницы; Smart DNS.",
+    "policy": "smart",
+    "sources": [
+      "https://dns.geodema.love/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Geodema DNS",
+    "ip": "179.236.130.10",
+    "default": false
+  },
+  {
+    "name": "Geodema DNS · резервный",
+    "host": "dns.geodema.love",
+    "url": "https://dns.geodema.love/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Адреса подтверждены прямым чтением официальной страницы; Smart DNS. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://dns.geodema.love/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Geodema DNS",
+    "ip": "179.236.130.11",
+    "default": false
+  },
+  {
+    "name": "GeoHide",
+    "host": "geohide.ru",
+    "url": "https://geohide.ru/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Официальная страница теперь использует geohide.ru без dns.; 95.182.120.241 исключён из текущего основного набора. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "smart",
+    "sources": [
+      "https://geohide.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "GeoHide",
+    "ip": "193.233.112.67",
+    "default": false,
+    "quic": "quic://geohide.ru"
+  },
+  {
+    "name": "GeoHide · резервный",
+    "host": "geohide.ru",
+    "url": "https://geohide.ru/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Официальная страница теперь использует geohide.ru без dns.; 95.182.120.241 исключён из текущего основного набора. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://geohide.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "GeoHide",
+    "ip": "193.233.112.68",
+    "default": false
+  },
+  {
+    "name": "GeoHide Europe",
+    "host": "eu.geohide.ru",
+    "url": "https://eu.geohide.ru/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Региональный Smart DNS. В этом профиле добавлены DoH/DoT из файла. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "smart",
+    "sources": [
+      "https://geohide.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "GeoHide Europe",
+    "ip": "",
+    "default": false,
+    "quic": "quic://eu.geohide.ru"
+  },
+  {
+    "name": "GeoHide USA",
+    "host": "us.geohide.ru",
+    "url": "https://us.geohide.ru/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Региональный Smart DNS. В этом профиле добавлены DoH/DoT из файла. DOH3: 1/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором).",
+    "policy": "smart",
+    "sources": [
+      "https://geohide.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "GeoHide USA",
+    "ip": "",
+    "default": false,
+    "quic": "quic://us.geohide.ru"
+  },
+  {
+    "name": "Google",
+    "host": "dns.google",
+    "url": "https://dns.google/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Публичный резолвер Google; базовые адреса и шифрованные транспорты. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://developers.google.com/speed/public-dns/docs/using/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Google",
+    "ip": "8.8.8.8",
+    "default": true
+  },
+  {
+    "name": "Google · резервный",
+    "host": "dns.google",
+    "url": "https://dns.google/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Публичный резолвер Google; базовые адреса и шифрованные транспорты. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://developers.google.com/speed/public-dns/docs/using/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Google",
+    "ip": "8.8.4.4",
+    "default": false
+  },
+  {
+    "name": "MagicDNS",
+    "host": "api.magicinfo.art",
+    "url": "https://api.magicinfo.art/rpc",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Заменены старые IP и dns.magicdns.ru; актуальные параметры взяты с сайта сервиса.",
+    "policy": "smart",
+    "sources": [
+      "https://magicdns.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "MagicDNS",
+    "ip": "217.144.190.216",
+    "default": false
+  },
+  {
+    "name": "MagicDNS · резервный",
+    "host": "api.magicinfo.art",
+    "url": "https://api.magicinfo.art/rpc",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Заменены старые IP и dns.magicdns.ru; актуальные параметры взяты с сайта сервиса. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://magicdns.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "MagicDNS",
+    "ip": "109.120.187.249",
+    "default": false
+  },
+  {
+    "name": "MSK-IX DNS",
+    "host": "",
+    "url": "",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Только UDP/TCP. Оператор прямо сообщает о фильтрации по реестру запрещённых ресурсов РФ.",
+    "policy": "filter",
+    "sources": [
+      "https://kb.msk-ix.ru/public/dns-server/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "MSK-IX DNS",
+    "ip": "62.76.76.62",
+    "default": false
+  },
+  {
+    "name": "MSK-IX DNS · резервный",
+    "host": "",
+    "url": "",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Только UDP/TCP. Оператор прямо сообщает о фильтрации по реестру запрещённых ресурсов РФ.",
+    "policy": "filter",
+    "sources": [
+      "https://kb.msk-ix.ru/public/dns-server/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "MSK-IX DNS",
+    "ip": "62.76.62.76",
+    "default": false
+  },
+  {
+    "name": "NextDNS",
+    "host": "dns.nextdns.io",
+    "url": "https://dns.nextdns.io",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Общие адреса без ID не проверяют ваш персональный профиль. Для профиля нужен собственный URL/hostname. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://github.com/nextdns/nextdns/wiki/Configuration"
+    ],
+    "verification": "partial",
+    "checked": "2026-11-15",
+    "profile": "NextDNS",
+    "ip": "45.90.28.0",
+    "default": false,
+    "quic": "quic://dns.nextdns.io"
+  },
+  {
+    "name": "NextDNS · резервный",
+    "host": "dns.nextdns.io",
+    "url": "https://dns.nextdns.io",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Общие адреса без ID не проверяют ваш персональный профиль. Для профиля нужен собственный URL/hostname. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://github.com/nextdns/nextdns/wiki/Configuration"
+    ],
+    "verification": "partial",
+    "checked": "2026-11-15",
+    "profile": "NextDNS",
+    "ip": "45.90.30.0",
+    "default": false,
+    "quic": "quic://dns.nextdns.io"
+  },
+  {
+    "name": "Quad9",
+    "host": "dns.quad9.net",
+    "url": "https://dns.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Блокировка угроз DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9",
+    "ip": "9.9.9.9",
+    "default": true,
+    "quic": "quic://dns.quad9.net"
+  },
+  {
+    "name": "Quad9 · резервный",
+    "host": "dns.quad9.net",
+    "url": "https://dns.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Блокировка угроз DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9",
+    "ip": "149.112.112.112",
+    "default": false,
+    "quic": "quic://dns.quad9.net"
+  },
+  {
+    "name": "Quad9 ECS",
+    "host": "dns11.quad9.net",
+    "url": "https://dns11.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Блокировка угроз; ECS передаёт часть клиентской подсети DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9 ECS",
+    "ip": "9.9.9.11",
+    "default": false,
+    "quic": "quic://dns11.quad9.net"
+  },
+  {
+    "name": "Quad9 ECS · резервный",
+    "host": "dns11.quad9.net",
+    "url": "https://dns11.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Блокировка угроз; ECS передаёт часть клиентской подсети DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9 ECS",
+    "ip": "149.112.112.11",
+    "default": false,
+    "quic": "quic://dns11.quad9.net"
+  },
+  {
+    "name": "Quad9 Unsecured",
+    "host": "dns10.quad9.net",
+    "url": "https://dns10.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Без блокировки угроз; проверку DNSSEC выполняет само приложение. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9 Unsecured",
+    "ip": "9.9.9.10",
+    "default": false,
+    "quic": "quic://dns10.quad9.net"
+  },
+  {
+    "name": "Quad9 Unsecured · резервный",
+    "host": "dns10.quad9.net",
+    "url": "https://dns10.quad9.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3",
+      "doq"
+    ],
+    "note": "Без блокировки угроз; проверку DNSSEC выполняет само приложение. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://github.com/Quad9DNS/documentation/blob/main/docs/en/services.md",
+      "https://quad9.net/news/blog/quad9-enables-dns-over-http-3-and-dns-over-quic/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Quad9 Unsecured",
+    "ip": "149.112.112.10",
+    "default": false,
+    "quic": "quic://dns10.quad9.net"
+  },
+  {
+    "name": "QUIC DNS",
+    "host": "dns.quic.best",
+    "url": "https://dns.quic.best/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Сейчас по указанному имени открывается справочник резолверов. Не удалось подтвердить прежний сервис и IP 194.238.57.69. Запись сохранена для сверки, запуск отключён.",
+    "policy": "standard",
+    "sources": [
+      "https://dns.quic.best/"
+    ],
+    "verification": "unconfirmed",
+    "checked": "2026-11-15",
+    "disabled": true,
+    "profile": "QUIC DNS",
+    "ip": "194.238.57.69",
+    "default": false
+  },
+  {
+    "name": "UncensoredDNS Anycast",
+    "host": "anycast.uncensoreddns.org",
+    "url": "https://anycast.uncensoreddns.org/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doq"
+    ],
+    "note": "UDP/TCP 53 отключён оператором с октября 2022. Оставлены только DoH/DoT. DOQ: 1/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://blog.uncensoreddns.org/dns-servers/",
+      "https://blog.uncensoreddns.org/about/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "UncensoredDNS Anycast",
+    "ip": "91.239.100.100",
+    "default": false,
+    "quic": "quic://anycast.uncensoreddns.org"
+  },
+  {
+    "name": "UncensoredDNS Unicast",
+    "host": "unicast.uncensoreddns.org",
+    "url": "https://unicast.uncensoreddns.org/dns-query",
+    "transports": [
+      "doh",
+      "dot",
+      "doq"
+    ],
+    "note": "UDP/TCP 53 отключён оператором с октября 2022. Оставлены только DoH/DoT. DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://blog.uncensoreddns.org/dns-servers/",
+      "https://blog.uncensoreddns.org/about/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "UncensoredDNS Unicast",
+    "ip": "89.233.43.71",
+    "default": false,
+    "quic": "quic://unicast.uncensoreddns.org"
+  },
+  {
+    "name": "Xbox DNS",
+    "host": "xbox-dns.ru",
+    "url": "https://xbox-dns.ru/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Адреса подтверждены, но оператор сообщает: сервис временно не работает. Можно выбрать для повторной проверки.",
+    "policy": "smart",
+    "sources": [
+      "https://xbox-dns.ru/"
+    ],
+    "verification": "outage",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Xbox DNS",
+    "ip": "111.88.96.54",
+    "default": false
+  },
+  {
+    "name": "Xbox DNS · резервный",
+    "host": "xbox-dns.ru",
+    "url": "https://xbox-dns.ru/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Адреса подтверждены, но оператор сообщает: сервис временно не работает. Можно выбрать для повторной проверки. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://xbox-dns.ru/"
+    ],
+    "verification": "outage",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Xbox DNS",
+    "ip": "111.88.96.55",
+    "default": false
+  },
+  {
+    "name": "Yandex",
+    "host": "common.dot.dns.yandex.net",
+    "url": "https://common.dot.dns.yandex.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Базовый профиль. На сайте явно указаны 77.88.8.8:443 и :853 для шифрованного DNS.",
+    "policy": "standard",
+    "sources": [
+      "https://dns.yandex.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "77.88.8.8",
+    "dot_ip": "77.88.8.8",
+    "profile": "Yandex",
+    "ip": "77.88.8.8",
+    "default": false
+  },
+  {
+    "name": "Yandex · резервный",
+    "host": "common.dot.dns.yandex.net",
+    "url": "https://common.dot.dns.yandex.net/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Базовый профиль. На сайте явно указаны 77.88.8.8:443 и :853 для шифрованного DNS.",
+    "policy": "standard",
+    "sources": [
+      "https://dns.yandex.ru/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "77.88.8.8",
+    "dot_ip": "77.88.8.8",
+    "profile": "Yandex",
+    "ip": "77.88.8.1",
+    "default": false
+  },
+  {
+    "name": "Zapret DNS",
+    "host": "",
+    "url": "https://dns.zapret.moe/dns-query",
+    "transports": [
+      "doh"
+    ],
+    "note": "Оператор теперь заявляет только DoH через Cloudflare. Старый IP 83.217.211.149 и DoT исключены; возможна смена имени сервиса.",
+    "policy": "smart",
+    "sources": [
+      "https://dns.zapret.moe/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Zapret DNS",
+    "ip": "",
+    "default": false
+  },
+  {
+    "name": "Bezmezhau DNS",
+    "host": "dns.bezmezhau.com",
+    "url": "https://dns.bezmezhau.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq"
+    ],
+    "note": "Обе текущие страницы /setup и /en/setup проверены напрямую: 143.20.64.55 и 31.58.216.201. В поисковом кеше встречаются другие IP. DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "smart",
+    "sources": [
+      "https://bezmezhau.com/setup"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Bezmezhau DNS",
+    "ip": "143.20.64.55",
+    "default": false,
+    "quic": "quic://dns.bezmezhau.com"
+  },
+  {
+    "name": "Bezmezhau DNS · резервный",
+    "host": "dns.bezmezhau.com",
+    "url": "https://dns.bezmezhau.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Обе текущие страницы /setup и /en/setup проверены напрямую: 143.20.64.55 и 31.58.216.201. В поисковом кеше встречаются другие IP. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://bezmezhau.com/setup"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "Bezmezhau DNS",
+    "ip": "31.58.216.201",
+    "default": false
+  },
+  {
+    "name": "AstraCat DNS",
+    "host": "dns.astracat.network",
+    "url": "https://dns.astracat.network/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Сайт бренда публикует .network и порт 443; старые .ru:8443 и 176.125.254.77 исключены. Репозиторий ASTRACAT2022 публикует другое имя dns.commonnet.work: источники расходятся.",
+    "policy": "smart",
+    "sources": [
+      "https://astracat.network/",
+      "https://github.com/ASTRACAT2022/host-DNS"
+    ],
+    "verification": "partial",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "AstraCat DNS",
+    "ip": "135.106.217.200",
+    "default": false
+  },
+  {
+    "name": "AstraCat DNS · резервный",
+    "host": "dns.astracat.network",
+    "url": "https://dns.astracat.network/dns-query",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Сайт бренда публикует .network и порт 443; старые .ru:8443 и 176.125.254.77 исключены. Репозиторий ASTRACAT2022 публикует другое имя dns.commonnet.work: источники расходятся. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "smart",
+    "sources": [
+      "https://astracat.network/",
+      "https://github.com/ASTRACAT2022/host-DNS"
+    ],
+    "verification": "partial",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "AstraCat DNS",
+    "ip": "135.106.197.22",
+    "default": false
+  },
+  {
+    "name": "Cloudflare Malware",
+    "host": "security.cloudflare-dns.com",
+    "url": "https://security.cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Фильтрующий профиль: Malware DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором).",
+    "policy": "filter",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/setup/android/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare Malware",
+    "ip": "1.1.1.2",
+    "default": false
+  },
+  {
+    "name": "Cloudflare Malware · резервный",
+    "host": "security.cloudflare-dns.com",
+    "url": "https://security.cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Фильтрующий профиль: Malware DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/setup/android/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare Malware",
+    "ip": "1.0.0.2",
+    "default": false
+  },
+  {
+    "name": "Cloudflare Family",
+    "host": "family.cloudflare-dns.com",
+    "url": "https://family.cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Фильтрующий профиль: Family DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором).",
+    "policy": "filter",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/setup/android/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare Family",
+    "ip": "1.1.1.3",
+    "default": false
+  },
+  {
+    "name": "Cloudflare Family · резервный",
+    "host": "family.cloudflare-dns.com",
+    "url": "https://family.cloudflare-dns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "Фильтрующий профиль: Family DOH3: 0/2 ответов при проверке основного адреса 15.11.2026 (поддержка заявлена оператором). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://developers.cloudflare.com/1.1.1.1/ip-addresses/",
+      "https://developers.cloudflare.com/1.1.1.1/setup/android/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cloudflare Family",
+    "ip": "1.0.0.3",
+    "default": false
+  },
+  {
+    "name": "ControlD Free p1",
+    "host": "p1.freedns.controld.com",
+    "url": "https://freedns.controld.com/p1",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Вредоносные домены; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.2.11",
+    "dot_ip": "76.76.2.11",
+    "profile": "ControlD Free p1",
+    "ip": "76.76.2.1",
+    "default": false,
+    "quic": "quic://p1.freedns.controld.com",
+    "doq_ip": "76.76.2.11"
+  },
+  {
+    "name": "ControlD Free p1 · резервный",
+    "host": "p1.freedns.controld.com",
+    "url": "https://freedns.controld.com/p1",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Вредоносные домены; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.10.11",
+    "dot_ip": "76.76.10.11",
+    "profile": "ControlD Free p1",
+    "ip": "76.76.10.1",
+    "default": false,
+    "quic": "quic://p1.freedns.controld.com",
+    "doq_ip": "76.76.10.11"
+  },
+  {
+    "name": "ControlD Free p2",
+    "host": "p2.freedns.controld.com",
+    "url": "https://freedns.controld.com/p2",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Реклама, трекеры и вредоносные домены; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "filter",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.2.11",
+    "dot_ip": "76.76.2.11",
+    "profile": "ControlD Free p2",
+    "ip": "76.76.2.2",
+    "default": false,
+    "quic": "quic://p2.freedns.controld.com",
+    "doq_ip": "76.76.2.11"
+  },
+  {
+    "name": "ControlD Free p2 · резервный",
+    "host": "p2.freedns.controld.com",
+    "url": "https://freedns.controld.com/p2",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doq",
+      "doh3"
+    ],
+    "note": "Реклама, трекеры и вредоносные домены; для DoH/DoT используются отдельные bootstrap IP 76.76.2.11 / 76.76.10.11. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). DOQ: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "filter",
+    "sources": [
+      "https://docs.controld.com/docs/free-dns",
+      "https://docs.controld.com/docs/control-d-ip-ranges"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "doh_ip": "76.76.10.11",
+    "dot_ip": "76.76.10.11",
+    "profile": "ControlD Free p2",
+    "ip": "76.76.10.2",
+    "default": false,
+    "quic": "quic://p2.freedns.controld.com",
+    "doq_ip": "76.76.10.11"
+  },
+  {
+    "name": "OpenBLD.net ADA",
+    "host": "ada.openbld.net",
+    "url": "https://ada.openbld.net/dns-query",
+    "transports": [
+      "doh",
+      "dot"
+    ],
+    "note": "Адаптивный рекламный фильтр",
+    "policy": "filter",
+    "sources": [
+      "https://openbld.net/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "OpenBLD.net ADA",
+    "ip": "",
+    "default": false
+  },
+  {
+    "name": "OpenBLD.net RIC",
+    "host": "ric.openbld.net",
+    "url": "https://ric.openbld.net/dns-query",
+    "transports": [
+      "doh",
+      "dot"
+    ],
+    "note": "Строгий фильтр: возможны намеренные блокировки легитимных ресурсов",
+    "policy": "filter",
+    "sources": [
+      "https://openbld.net/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "OpenBLD.net RIC",
+    "ip": "",
+    "default": false
+  },
+  {
+    "name": "DNS4EU Unfiltered",
+    "host": "unfiltered.joindns4.eu",
+    "url": "https://unfiltered.joindns4.eu/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Без обычного контентного фильтра, но оператор применяет судебные блокировки ко всем профилям, включая Unfiltered.",
+    "policy": "filter",
+    "sources": [
+      "https://joindns4.eu/for-public"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS4EU Unfiltered",
+    "ip": "86.54.11.100",
+    "default": false
+  },
+  {
+    "name": "DNS4EU Unfiltered · резервный",
+    "host": "unfiltered.joindns4.eu",
+    "url": "https://unfiltered.joindns4.eu/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Без обычного контентного фильтра, но оператор применяет судебные блокировки ко всем профилям, включая Unfiltered.",
+    "policy": "filter",
+    "sources": [
+      "https://joindns4.eu/for-public"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS4EU Unfiltered",
+    "ip": "86.54.11.200",
+    "default": false
+  },
+  {
+    "name": "Cisco OpenDNS",
+    "host": "dns.opendns.com",
+    "url": "https://dns.opendns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Использован опубликованный core DoH URL dns.opendns.com, соответствующий 208.67.*. Фильтры могут зависеть от зарегистрированного IP.",
+    "policy": "filter",
+    "sources": [
+      "https://umbrella.cisco.com/blog/enhancing-support-dns-encryption-with-dns-over-https"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cisco OpenDNS",
+    "ip": "208.67.222.222",
+    "default": false
+  },
+  {
+    "name": "Cisco OpenDNS · резервный",
+    "host": "dns.opendns.com",
+    "url": "https://dns.opendns.com/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Использован опубликованный core DoH URL dns.opendns.com, соответствующий 208.67.*. Фильтры могут зависеть от зарегистрированного IP.",
+    "policy": "filter",
+    "sources": [
+      "https://umbrella.cisco.com/blog/enhancing-support-dns-encryption-with-dns-over-https"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "Cisco OpenDNS",
+    "ip": "208.67.220.220",
+    "default": false
+  },
+  {
+    "name": "CleanBrowsing Security",
+    "host": "security-filter-dns.cleanbrowsing.org",
+    "url": "https://doh.cleanbrowsing.org/doh/security-filter/",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot"
+    ],
+    "note": "Защитный профиль. DoH и DoT имеют разные TLS-имена.",
+    "policy": "filter",
+    "sources": [
+      "https://cleanbrowsing.org/learn/configure-free-filtering",
+      "https://cleanbrowsing.org/support/troubleshooting/firewall-dns-requirements"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "CleanBrowsing Security",
+    "ip": "185.228.168.9",
+    "default": false
+  },
+  {
+    "name": "CleanBrowsing Security · резервный",
+    "host": "security-filter-dns.cleanbrowsing.org",
+    "url": "https://doh.cleanbrowsing.org/doh/security-filter/",
+    "transports": [
+      "udp",
+      "tcp"
+    ],
+    "note": "Защитный профиль. DoH и DoT имеют разные TLS-имена. Резервный IP — для обычного DNS; шифрованный профиль проверяется основной записью по имени.",
+    "policy": "filter",
+    "sources": [
+      "https://cleanbrowsing.org/learn/configure-free-filtering",
+      "https://cleanbrowsing.org/support/troubleshooting/firewall-dns-requirements"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "CleanBrowsing Security",
+    "ip": "185.228.169.9",
+    "default": false
+  },
+  {
+    "name": "DNS.SB",
+    "host": "dot.sb",
+    "url": "https://doh.sb/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "DoH: doh.sb; DoT: dot.sb. Раздельные TLS-имена. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением).",
+    "policy": "standard",
+    "sources": [
+      "https://dns.sb/doh/",
+      "https://dns.sb/dot/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS.SB",
+    "ip": "185.222.222.222",
+    "default": false
+  },
+  {
+    "name": "DNS.SB · резервный",
+    "host": "dot.sb",
+    "url": "https://doh.sb/dns-query",
+    "transports": [
+      "udp",
+      "tcp",
+      "doh",
+      "dot",
+      "doh3"
+    ],
+    "note": "DoH: doh.sb; DoT: dot.sb. Раздельные TLS-имена. DOH3: 2/2 ответов при проверке основного адреса 15.11.2026 (TLS и протокол подтверждены подключением). Резервный IP в этом прогоне не проверялся.",
+    "policy": "standard",
+    "sources": [
+      "https://dns.sb/doh/",
+      "https://dns.sb/dot/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "profile": "DNS.SB",
+    "ip": "45.11.45.11",
+    "default": false
+  },
+  {
+    "name": "LibreDNS",
+    "host": "dot.libredns.gr",
+    "url": "https://doh.libredns.gr/dns-query",
+    "transports": [
+      "doh",
+      "dot"
+    ],
+    "note": "Официально подтверждены DoH/DoT. UDP/TCP из исходного файла не включены без подтверждения; DoH и DoT имеют разные имена.",
+    "policy": "standard",
+    "sources": [
+      "https://libredns.gr/"
+    ],
+    "verification": "documented",
+    "checked": "2026-11-15",
+    "by_name": true,
+    "profile": "LibreDNS",
+    "ip": "116.202.176.26",
+    "default": false
+  }
+]
