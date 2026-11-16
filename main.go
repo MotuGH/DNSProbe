@@ -36,16 +36,17 @@ type Config struct {
 	DNSSEC     bool       `json:"dnssec"`
 }
 type Run struct {
-	ID        string          `json:"id"`
-	Started   time.Time       `json:"started"`
-	Finished  *time.Time      `json:"finished"`
-	State     string          `json:"state"`
-	Config    Config          `json:"config"`
-	Results   []Result        `json:"results"`
-	Progress  int             `json:"progress"`
-	Total     int             `json:"total"`
-	Error     string          `json:"error"`
-	Benchmark json.RawMessage `json:"benchmark,omitempty"`
+	ID              string          `json:"id"`
+	Started         time.Time       `json:"started"`
+	Finished        *time.Time      `json:"finished"`
+	State           string          `json:"state"`
+	Config          Config          `json:"config"`
+	Results         []Result        `json:"results"`
+	Progress        int             `json:"progress"`
+	CompletedRounds *int            `json:"completed_rounds,omitempty"`
+	Total           int             `json:"total"`
+	Error           string          `json:"error"`
+	Benchmark       json.RawMessage `json:"benchmark,omitempty"`
 }
 
 var mu sync.Mutex
@@ -214,6 +215,8 @@ func execute(ctx context.Context, r *Run) {
 		compare(batch)
 		mu.Lock()
 		copy(r.Results[len(r.Results)-len(batch):], batch)
+		completed := round
+		r.CompletedRounds = &completed
 		if e := persist(r); e != nil {
 			r.Error = e.Error()
 		}
@@ -258,7 +261,7 @@ func start(w http.ResponseWriter, r *http.Request) {
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	cancelRun = cancel
-	current = &Run{ID: id(), Started: time.Now().UTC(), State: "running", Config: c, Results: []Result{}, Total: measurementCount(c)}
+	current = &Run{ID: id(), Started: time.Now().UTC(), State: "running", Config: c, Results: []Result{}, Total: measurementCount(c), CompletedRounds: new(int)}
 	go execute(ctx, current)
 	writeJSON(w, current)
 }
@@ -364,7 +367,7 @@ func main() {
 	token = id()
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, r *http.Request) {
-		writeJSON(w, map[string]string{"app": "DNSProbe", "version": "quic-audit-2"})
+		writeJSON(w, map[string]string{"app": "DNSProbe", "version": "0.2.0"})
 	})
 	assets, _ := fs.Sub(web, "web")
 	mux.Handle("/", http.FileServer(http.FS(assets)))

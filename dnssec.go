@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"crypto/rsa"
+	"errors"
 	"fmt"
 	"github.com/miekg/dns"
 	"strings"
@@ -13,6 +15,11 @@ var rootDigests = map[string]bool{
 	"E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D": true,
 	"683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16": true,
 }
+
+var (
+	errNoAnswerSignature      = errors.New("в ответе нет подписи RRSIG")
+	errInvalidAnswerSignature = errors.New("подпись ответа не прошла проверку доверенным ключом")
+)
 
 type validator struct {
 	ctx       context.Context
@@ -145,21 +152,45 @@ func (v *validator) answer(m *dns.Msg, q dns.Question) error {
 		if len(set) == 0 {
 			return fmt.Errorf("нет полной подписанной цепочки ответа")
 		}
-		valid := false
-		for _, s := range sigs(m, name, typ) {
-			if !dns.IsSubDomain(s.SignerName, name) {
+		signatures := sigs(m, name, typ)
+		if len(signatures) == 0 {
+			return errNoAnswerSignature
+		}
+		valid, invalid := false, true
+		for _, s := range signatures {
+			if !dns.IsSubDomain(s.SignerName, name) || int(s.Labels) != dns.CountLabel(name) {
+				invalid = false
+				continue // wildcard proof requires NSEC validation
+			}
+			keys, err := v.keys(s.SignerName, 0)
+			if err != nil {
+				invalid = false
 				continue
 			}
-			if int(s.Labels) != dns.CountLabel(name) {
-				continue
-			} // wildcard proof requires NSEC validation
-			keys, err := v.keys(s.SignerName, 0)
-			if err == nil && verify(set, []*dns.RRSIG{s}, keys, s.SignerName) {
-				valid = true
+			failed := false
+			for _, key := range keys {
+				if key.Flags&256 == 0 || key.Flags&128 != 0 || key.Protocol != 3 ||
+					key.Algorithm != s.Algorithm || key.KeyTag() != s.KeyTag {
+					continue
+				}
+				err := s.Verify(key, set)
+				if err == nil && s.ValidityPeriod(time.Now()) {
+					valid = true
+					break
+				}
+				if err == nil || errors.Is(err, dns.ErrSig) || errors.Is(err, rsa.ErrVerification) {
+					failed = true
+				}
+			}
+			if valid {
 				break
 			}
+			invalid = invalid && failed
 		}
 		if !valid {
+			if invalid {
+				return errInvalidAnswerSignature
+			}
 			return fmt.Errorf("подпись/цепочка не подтверждена (включая unsigned и wildcard)")
 		}
 		if typ == q.Qtype {

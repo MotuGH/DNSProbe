@@ -6,6 +6,7 @@ import (
 	"crypto/tls"
 	_ "embed"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/miekg/dns"
 	"io"
@@ -271,7 +272,15 @@ func probe(parent context.Context, ep Endpoint, transport, domain, typ string, r
 		defer stop()
 		v := validator{ctx: vc, ep: ep, transport: transport, cache: map[string][]*dns.DNSKEY{}}
 		if err := v.answer(m, q.Question[0]); err != nil {
-			r.DNSSEC = "indeterminate"
+			switch {
+			case errors.Is(err, errNoAnswerSignature):
+				r.DNSSEC = "no_signature"
+			case errors.Is(err, errInvalidAnswerSignature):
+				r.DNSSEC = "invalid_signature"
+				r.Status = "error"
+			default:
+				r.DNSSEC = "indeterminate"
+			}
 			r.Notes = append(r.Notes, "DNSSEC: "+err.Error())
 		} else {
 			r.DNSSEC = "validated"

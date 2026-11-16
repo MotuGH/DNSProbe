@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"crypto"
+	"errors"
 	"github.com/miekg/dns"
 	"net"
 	"testing"
@@ -79,7 +80,21 @@ func TestDNSSECSignature(t *testing.T) {
 	if !verify(set, []*dns.RRSIG{sig}, []*dns.DNSKEY{key}, "example.") {
 		t.Fatal("valid signature rejected")
 	}
+	v := validator{cache: map[string][]*dns.DNSKEY{"example.": {key}}}
+	msg := &dns.Msg{Answer: []dns.RR{rr, sig}}
+	question := dns.Question{Name: "www.example.", Qtype: dns.TypeA, Qclass: dns.ClassINET}
+	if err := v.answer(msg, question); err != nil {
+		t.Fatal(err)
+	}
 	rr.(*dns.A).A = net.ParseIP("192.0.2.2")
+	if err := v.answer(msg, question); !errors.Is(err, errInvalidAnswerSignature) {
+		t.Fatalf("tampered signature classification: %v", err)
+	}
+	sig.KeyTag++
+	if err := v.answer(msg, question); err == nil || errors.Is(err, errInvalidAnswerSignature) {
+		t.Fatalf("unavailable signing key classification: %v", err)
+	}
+	sig.KeyTag--
 	if verify(set, []*dns.RRSIG{sig}, []*dns.DNSKEY{key}, "example.") {
 		t.Fatal("tampered data accepted")
 	}
@@ -90,8 +105,8 @@ func TestADIsNotProof(t *testing.T) {
 	rr, _ := dns.NewRR("example. 60 IN A 192.0.2.1")
 	m.Answer = []dns.RR{rr}
 	v := validator{ctx: context.Background(), cache: map[string][]*dns.DNSKEY{}}
-	if v.answer(m, dns.Question{Name: "example.", Qtype: dns.TypeA, Qclass: dns.ClassINET}) == nil {
-		t.Fatal("AD trusted without signature")
+	if err := v.answer(m, dns.Question{Name: "example.", Qtype: dns.TypeA, Qclass: dns.ClassINET}); !errors.Is(err, errNoAnswerSignature) {
+		t.Fatalf("missing signature classification: %v", err)
 	}
 }
 func TestConfigRejectsArgumentInjection(t *testing.T) {

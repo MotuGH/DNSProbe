@@ -1,19 +1,117 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DNSProbe — диагностика DNS</title><link rel="stylesheet" href="/style.css"></head><body>
-<header><div class="header-inner"><div class="brand"><span class="logo">D</span><div>DNSProbe<small>Локальная лаборатория DNS</small></div></div><span id="state" class="pill">Готов к проверке</span></div></header>
-<main><section class="intro"><div class="eyebrow">ДОСТОВЕРНОСТЬ · ДОСТУПНОСТЬ · СТАБИЛЬНОСТЬ</div><h1>Что происходит с вашим DNS?</h1><p>Проверьте ответы и сравните пути подключения. Все измерения выполняются на этом компьютере.</p></section>
-<div class="layout"><aside class="card"><h2>Настройки проверки</h2><label>Домены <textarea id="domains" rows="4">example.com
+<header><div class="header-inner">
+  <div class="brand"><img class="logo" src="/logo.svg" alt="" width="42" height="42"><div>DNSProbe<small>Локальная лаборатория DNS</small></div></div>
+  <div class="header-copy"><h1>Что происходит с вашим DNS?</h1><span class="eyebrow">Достоверность · Доступность · Стабильность</span></div>
+  <span id="state" class="pill">Готов к проверке</span>
+</div></header>
+<main class="layout">
+<aside class="card settings">
+  <div class="settings-header">
+    <h2>Настройки проверки</h2>
+    <div class="segmented" aria-label="Раздел настроек">
+      <button id="serversTab" aria-controls="serversPanel" aria-pressed="true">Серверы (0)</button>
+      <button id="paramsTab" aria-controls="paramsPanel" aria-pressed="false">Параметры</button>
+    </div>
+  </div>
+  <section id="serversPanel" class="servers-panel" aria-label="Серверы">
+    <div class="catalog-controls">
+      <div class="sectionhead">
+        <div class="results-heading"><h3>DNS-каталог</h3>
+          <details class="help catalog-help"><summary aria-label="О каталоге">?</summary>
+            <div class="help-content"><p>Сверка: 15.11.2026. Только доступные для профиля транспорты попадут в тест. DoH3 и DoQ проверяются без перехода на TCP; блокировка QUIC будет видна как ошибка.</p></div>
+          </details>
+        </div>
+        <button id="openCustom" class="secondary compact">+ Свой сервер</button>
+      </div>
+      <div class="segmented" aria-label="Фильтр каталога">
+  <button id="catalogAll" aria-pressed="true" title="Число доступных для проверки адресных записей">Все</button>
+  <button id="catalogSelected" aria-pressed="false">Выбранные</button>
+</div><input id="serverSearch" aria-label="Поиск DNS" placeholder="Название, адрес, фильтрация…"><div class="pair"><button id="selectVisible" class="secondary compact">Выбрать найденные</button><button id="clearServers" class="secondary compact">Снять все</button></div><p id="selectionCount" class="hint"></p>
+    </div>
+    <div id="servers" tabindex="0" aria-label="Список DNS-серверов"></div>
+    <dialog id="customServer" aria-labelledby="customHeading">
+      <div class="sectionhead"><h2 id="customHeading">Свой сервер</h2>
+        <button id="closeCustom" class="secondary compact" aria-label="Закрыть">×</button>
+      </div>
+      <label>Название<input id="customName" placeholder="Мой DNS"></label><label>IP<input id="customIP" placeholder="192.168.1.1"></label><label>TLS-имя DoT<input id="customHost" placeholder="dns.example.net"></label><label>DoH URL<input id="customURL" placeholder="https://dns.example.net/dns-query"></label><label class="check"><input type="checkbox" id="customH3">Проверять этот DoH URL также через HTTP/3</label><label>DoQ URL<input id="customQUIC" placeholder="quic://dns.example.net:853"></label><p id="customError" class="hint" role="alert"></p><button id="add" class="secondary">Добавить</button>
+    </dialog>
+  </section>
+  <section id="paramsPanel" class="settings-scroll" aria-label="Параметры" hidden>
+    <label>Домены <textarea id="domains" rows="6">example.com
 cloudflare.com
-wikipedia.org</textarea></label><p class="hint">По одному на строку. Для IDN используйте punycode.</p>
-<h3>DNS-каталог · 40 профилей</h3><input id="serverSearch" aria-label="Поиск DNS" placeholder="Название, адрес, фильтрация…"><div class="pair"><button id="selectVisible" class="secondary compact">Выбрать найденные</button><button id="clearServers" class="secondary compact">Снять все</button></div><p id="selectionCount" class="hint"></p><div id="servers"></div><p class="hint">Сверка: 15.11.2026. Только доступные для профиля транспорты попадут в тест. DoH3 и DoQ проверяются без перехода на TCP; блокировка QUIC будет видна как ошибка.</p><details><summary>Добавить свой сервер</summary><label>Название<input id="customName" placeholder="Мой DNS"></label><label>IP<input id="customIP" placeholder="192.168.1.1"></label><label>TLS-имя DoT<input id="customHost" placeholder="dns.example.net"></label><label>DoH URL<input id="customURL" placeholder="https://dns.example.net/dns-query"></label><label class="check"><input type="checkbox" id="customH3">Проверять этот DoH URL также через HTTP/3</label><label>DoQ URL<input id="customQUIC" placeholder="quic://dns.example.net:853"></label><button id="add" class="secondary">Добавить</button></details>
-<h3>Транспорты</h3><div class="checks" id="transports"><label><input type="checkbox" value="udp" checked>UDP</label><label><input type="checkbox" value="tcp" checked>TCP</label><label><input type="checkbox" value="dot" checked>DoT</label><label><input type="checkbox" value="doh" checked>DoH</label><label><input type="checkbox" value="doh3" checked>DoH3</label><label><input type="checkbox" value="doq" checked>DoQ</label></div>
-<div class="checks" id="types"><label><input type="checkbox" value="A" checked>A · IPv4</label><label><input type="checkbox" value="AAAA">AAAA · IPv6</label></div>
-<label class="check"><input id="dnssec" type="checkbox" checked>Локальная проверка DNSSEC</label>
+wikipedia.org</textarea></label><p class="hint">По одному на строку. Для кириллицы используйте punycode (например, пример.рф → xn--e1afmkfd.xn--p1ai).</p>
+    <fieldset class="option-group"><legend>Протоколы</legend><div class="checks" id="transports"><label><input type="checkbox" value="udp" checked>UDP</label><label><input type="checkbox" value="tcp" checked>TCP</label><label><input type="checkbox" value="dot" checked>DoT</label><label><input type="checkbox" value="doh" checked>DoH</label><label><input type="checkbox" value="doh3" checked><span title="DNS через HTTPS по HTTP/3 поверх QUIC">DoH3</span></label><label><input type="checkbox" value="doq" checked><span title="DNS напрямую через защищённое соединение QUIC">DoQ</span></label></div>
+</fieldset><fieldset class="option-group"><legend>Семейство IP</legend><div class="checks" id="types"><label><input type="checkbox" value="A" checked>A · IPv4</label><label><input type="checkbox" value="AAAA">AAAA · IPv6</label></div>
+</fieldset><fieldset class="option-group"><legend>Валидация</legend><label class="check"><input id="dnssec" type="checkbox" checked>Локальная проверка DNSSEC</label></fieldset>
 <div class="pair"><label>Число циклов<input id="rounds" type="number" value="3" min="1" max="1440"></label><label>Пауза, сек<input id="interval" type="number" value="10" min="1" max="3600"></label></div><p class="hint">Пауза между завершёнными циклами. Запросы последовательные; DNSSEC добавляет служебные запросы.</p>
-<button id="start">Начать диагностику</button><button id="stop" class="secondary">Остановить</button>
+
 <details><summary>Нагрузка · dnspyre</summary><p class="hint">Выберите один сервер, транспорт и тип записи. Для DoH/DoH3/DoT/DoQ dnspyre использует системный DNS для имени сервера.</p><div class="pair"><label>Запросов/сек<input id="qps" type="number" min="1" max="100" value="5"></label><label>Длительность, сек<input id="seconds" type="number" min="1" max="300" value="15"></label></div><button id="benchmark" class="secondary">Запустить dnspyre</button></details>
-</aside><article><div id="error" role="alert"></div><div class="stats"><div class="card"><small>Ответы DNS</small><strong id="availability">—</strong><span>включая NXDOMAIN и SERVFAIL</span></div><div class="card"><small>Ошибки / подозрительные</small><strong id="issues">—</strong><span>среди выполненных измерений</span></div><div class="card"><small>Задержка p95</small><strong id="latency">—</strong><span>без времени проверки DNSSEC</span></div></div>
-<section class="card"><div class="sectionhead"><h2>Результаты</h2><button id="export" class="secondary compact">Экспорт JSON</button></div><p id="progress" class="hint">Запустите проверку, чтобы увидеть реальные измерения.</p><progress id="bar" value="0" max="1"></progress><div class="legend"><span>✓ Подтверждено DNSSEC</span><span>! Подозрительно</span><span>× Ошибка</span><span>○ Недостаточно данных</span></div><div class="tablewrap"><table><thead><tr><th>Сервер / путь</th><th>Ответы</th><th>Ошибки / подозр.</th><th>p95</th><th>Ошибок подряд, макс.</th></tr></thead><tbody id="summary"></tbody></table></div><p class="hint">Автосортировка: меньше доля ошибок и подозрительных ответов → ниже p95 задержки успешных ответов. Это время DNS-запроса, не ICMP-пинг. Ответы — полученные DNS-пакеты / попытки. Серия ошибок считается отдельно для каждого домена и типа; здесь показан максимум.</p></section>
-<section class="card"><h2>Журнал измерений</h2><p class="hint">Последние 200 записей; полный журнал доступен в JSON. AD — заявление резолвера, а не результат локальной проверки.</p><div id="results" class="results"><div class="empty">Здесь появятся ответы, наблюдения и причины ошибок.</div></div><pre id="benchmarkResult" hidden></pre></section>
-<section class="card"><div class="sectionhead"><h2>История на компьютере</h2><button id="refresh" class="secondary compact">Обновить</button></div><div id="history" class="history"></div></section>
-<footer>Различия IP могут объясняться CDN. Таймауты не доказывают цензуру. Для неподписанных зон, wildcard и отрицательных ответов криптографический вывод в этой версии недоступен.</footer>
-</article></div></main><script src="/ranking.js"></script><script src="/app.js"></script></body></html>
+  </section>
+<div class="settings-actions">
+  <button id="parameterSummary" class="secondary compact" title="Открыть параметры проверки"></button>
+  <button id="start">Начать диагностику</button>
+  <button id="stop" class="secondary" hidden>Остановить</button>
+</div></aside><article class="dashboard"><div id="error" role="alert"></div><div class="stats"><div class="card"><small>Ответы DNS</small><strong id="availability">—</strong><span id="packetCount">—</span></div><div class="card"><small>Ошибки / подозрительные</small><strong id="issues">—</strong><span id="issuesCount">—</span></div><div class="card"><small title="Медиана до 20 подходящих ответов, затем 95-й перцентиль" id="latencyTitle">Задержка</small><strong id="latency">—</strong><span id="latencyHint">—</span></div></div>
+<div id="verdict" hidden>
+<div id="verdictMain" class="verdict">
+  <span id="verdictText" role="status"></span>
+  <button id="showProblem" class="secondary compact" hidden>Показать в журнале →</button>
+</div>
+<div id="localVerdict" class="verdict verdict-info" hidden>
+  <span id="localVerdictText"></span>
+  <button id="showLocal" class="secondary compact" aria-label="Фильтровать журнал по примеру служебного IP">Фильтр</button>
+</div>
+</div>
+<section class="card result-card">
+  <div class="sectionhead">
+    <div class="results-heading"><h2>Результаты</h2>
+      <details class="help"><summary aria-label="Как читать результаты">?</summary>
+        <div class="help-content">
+          <p>Строки отсортированы от большей доли ошибок и подозрительных ответов к меньшей, затем по доле ошибок и медиане времени DNS-запроса. Нажмите строку, чтобы отфильтровать журнал.</p>
+          <p>Ответы — полученные DNS-пакеты на число попыток. Максимальная серия ошибок считается отдельно для каждого домена и типа записи.</p>
+          <p>Различия IP могут объясняться CDN. Таймаут сам по себе не доказывает цензуру. Проверка DNSSEC здесь ограничена положительными ответами без wildcard. Флаг AD передаёт заявление резолвера.</p>
+        </div>
+      </details>
+    </div>
+    <button id="export" class="secondary compact" disabled>Экспорт JSON</button>
+  </div>
+  <div class="progress-line">
+    <p id="progress" class="hint">Запустите проверку, чтобы увидеть измерения.</p>
+    <strong id="progressCount"></strong>
+  </div>
+  <progress id="bar" value="0" max="1" aria-label="Ход проверки"></progress>
+  <p id="summaryEmpty" class="empty">Измерений пока нет</p>
+  <div class="tablewrap" id="summaryTable" hidden>
+    <table><thead><tr><th>Сервер / путь</th><th>Ответы</th><th>Ошибки / подозр.</th><th id="tableLatencyTitle" title="Медиана до 20 подходящих ответов, затем p95">Задержка</th><th>Ошибок подряд</th></tr></thead><tbody id="summary"></tbody></table>
+  </div>
+  <p id="tableHint" class="hint table-hint" hidden>Нажмите на строку, чтобы отфильтровать журнал.</p>
+  <pre id="benchmarkResult" hidden></pre>
+</section>
+</article>
+<aside class="card activity" aria-label="Журнал и история">
+  <div class="segmented" aria-label="Раздел">
+    <button id="logTab" aria-pressed="true" aria-controls="logPanel">Журнал измерений (0)</button>
+    <button id="historyTab" aria-pressed="false" aria-controls="historyPanel">История на компьютере</button>
+  </div>
+  <section id="logPanel" class="activity-panel">
+    <div class="log-controls">
+      <input id="logSearch" type="search" aria-label="Поиск по домену или IP" placeholder="Домен или IP">
+      <div id="pathFilter" class="path-filter" hidden><button id="resetPath" class="secondary compact" title="Сбросить фильтр по серверу и протоколу"><span id="pathName"></span> ✕</button></div>
+      <div class="segmented chips" id="logStatuses" aria-label="Статус измерений">
+        <button data-status="all" aria-pressed="true">Все</button>
+        <button data-status="passed" aria-pressed="false" title="Корректные ответы, включая ответы без подписи DNSSEC">Успешно</button>
+        <button data-status="issues" aria-pressed="false" title="Ошибки и подозрительные ответы" aria-label="Ошибки и подозрительные ответы">Ошибки</button>
+        <button data-status="insufficient" aria-pressed="false" title="Недостаточно данных и служебные IP" aria-label="Недостаточно данных и служебные IP">Нет данных</button>
+      </div>
+
+    </div>
+    <div id="results" class="results"><div class="empty">Нет измерений</div></div>
+  </section>
+  <section id="historyPanel" class="activity-panel" hidden>
+    <div class="history-actions"><button id="refresh" class="secondary compact">Обновить</button><button id="live" class="secondary compact" hidden>К текущей проверке</button></div>
+    <div id="history" class="history"></div>
+  </section>
+</aside>
+</main>
+<script src="/ranking.js"></script><script src="/app.js"></script>
+</body></html>
